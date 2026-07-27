@@ -32,7 +32,7 @@ Automatically deploy an Ubuntu Server Cloud Image virtual machine on Hyper-V wit
 - `qemu-img.exe`
 - `oscdimg.exe`
 
-Both executables must be located in the same directory as the PowerShell script. :contentReference[oaicite:0]{index=0}
+Both executables must be be located in the same directory as the PowerShell script.
 
 ---
 
@@ -71,7 +71,7 @@ It then automatically:
 9. Removes temporary Cloud-Init files
 10. Restarts the VM
 
-The Cloud-Init configuration also downloads and executes the Semaphore installation script during the first boot. :contentReference[oaicite:1]{index=1}
+During the first boot, Cloud-Init also downloads and executes the Semaphore installation script automatically.
 
 ---
 
@@ -97,6 +97,30 @@ from:
 https://raw.githubusercontent.com/BitDevOne/Hyper-V/refs/heads/main/Semaphore/install-semaphore.sh
 ```
 
+---
+
+## Accessing Semaphore
+
+After Cloud-Init provisioning has finished and the virtual machine has restarted, the Semaphore web interface is available at:
+
+```text
+http://<SERVER-IP>:3000
+```
+
+Example:
+
+```text
+http://192.168.1.100:3000
+```
+
+Default credentials:
+
+```text
+Username: admin
+Password: admin
+```
+
+> **Important:** For security reasons, change the default password immediately after your first login.
 
 ---
 
@@ -114,7 +138,7 @@ Follow the interactive prompts to configure your virtual machine.
 
 ## Project Structure
 
-```
+```text
 Project/
 │
 ├── Create-HyperV-Semaphore.ps1
@@ -125,7 +149,7 @@ Project/
 
 During execution, the script creates:
 
-```
+```text
 VM/
 ├── Virtual Hard Disks/
 │   └── <VMName>.vhdx
@@ -145,7 +169,8 @@ The temporary Cloud-Init files are automatically removed after the initial provi
 - The VM is configured as a Generation 2 Hyper-V virtual machine.
 - The root filesystem is automatically expanded on first boot.
 - SSH password authentication is enabled by default.
-- The VM powers off automatically after the initial Cloud-Init configuration and is restarted by the script.
+- The VM powers off automatically after the initial Cloud-Init configuration and is restarted automatically by the script.
+- Semaphore is installed automatically during the first boot and is accessible on **port 3000** after provisioning completes.
 
 ---
 
