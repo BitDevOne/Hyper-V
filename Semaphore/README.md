@@ -94,10 +94,9 @@ install-semaphore.sh
 from:
 
 ```text
-https://raw.githubusercontent.com/GrupaEuro/POWERSHELL/refs/heads/main/install-semaphore.sh
+[https://raw.githubusercontent.com/GrupaEuro/POWERSHELL/refs/heads/main/install-semaphore.sh](https://raw.githubusercontent.com/BitDevOne/Hyper-V/refs/heads/main/Semaphore/install-semaphore.sh)
 ```
 
-:contentReference[oaicite:2]{index=2}
 
 ---
 
