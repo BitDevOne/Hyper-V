@@ -2,7 +2,7 @@
 Clear-Host
 $ErrorActionPreference = "Stop"
 
-$InstallScriptUrl = "https://raw.githubusercontent.com/GrupaEuro/POWERSHELL/refs/heads/main/install-semaphore.sh"
+$InstallScriptUrl = "https://raw.githubusercontent.com/BitDevOne/Hyper-V/refs/heads/main/Semaphore/install-semaphore.sh"
 
 function Read-RequiredString {
     param(
